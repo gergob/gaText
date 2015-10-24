@@ -18,8 +18,9 @@
   },
   
   "permissions": [
-    "fileSystem"  
-    
+    { "fileSystem": ["write"] },
+    "storage",
+    "webview"
   ]
   
 }
