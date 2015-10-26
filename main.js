@@ -1,16 +1,13 @@
 window.onload = function () {
 
-    var textArea = document.querySelector('#textContent');
+    var textArea = $('#textContent');
 
     //
     //  new file is basically clearing the textarea
     //
     document.querySelector('#btnNewFile').onclick = function(){
-
-        var txtArea = $('#textContent');
-        $(txtArea).val('');
-        $(txtArea).focus();
-
+        $(textArea).val('');
+        $(textArea).focus();
     };
 
     //
@@ -29,7 +26,7 @@ window.onload = function () {
                     };
 
                     reader.onloadend = function (e) {
-                        $('#textContent').val(e.target.result);
+                        $(textArea).val(e.target.result);
                     };
 
                     reader.readAsText(file);
@@ -50,7 +47,7 @@ window.onload = function () {
             acceptsAllTypes: true,
             accepts: [{description: "Text files (*.txt)", extensions: ["txt"]}]
         }, function (fileEntry) {
-            var textToSave = $('#textContent').val();
+            var textToSave = $(textArea).val();
             console.log(textToSave);
             chrome.fileSystem.getDisplayPath(fileEntry, function (path) {
                 fileEntry.createWriter(function(fileWriter){
