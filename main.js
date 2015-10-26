@@ -71,9 +71,7 @@ window.onload = function () {
                     };
 
                     fileWriter.write(data);
-
                 });
-
             });
         });
     });
