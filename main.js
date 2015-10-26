@@ -5,15 +5,15 @@ window.onload = function () {
     //
     //  new file is basically clearing the textarea
     //
-    document.querySelector('#btnNewFile').onclick = function(){
+    $('#btnNewFile').click(function(){
         $(textArea).val('');
         $(textArea).focus();
-    };
+    });
 
     //
     //  opening text files
     //
-    document.querySelector('#btnOpenFile').onclick = function () {
+    $('#btnOpenFile').click(function () {
         chrome.fileSystem.chooseEntry({
             type: "openFile"
         }, function (fileEntry) {
@@ -35,12 +35,12 @@ window.onload = function () {
 
             });
         });
-    };
+    });
 
     //
     //  saving a file
     //
-    document.querySelector('#btnSaveFileAs').onclick = function () {
+    $('#btnSaveFileAs').click(function () {
         chrome.fileSystem.chooseEntry({
             type: "saveFile",
             suggestedName: "sample.txt",
@@ -76,7 +76,7 @@ window.onload = function () {
 
             });
         });
-    };
+    });
 
 
 };
